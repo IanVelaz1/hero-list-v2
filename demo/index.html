@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>hero-list demo</title>
+
+    <script src="../../webcomponentsjs/webcomponents-loader.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../../paper-toast/paper-toast.html">
+    <link rel="import" href="../hero-list.html">
+
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+      </style>
+    </custom-style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Basic hero-list demo</h3>
+      <demo-snippet>
+        <template>
+          <hero-list></hero-list>
+          
+        </template>
+        <script>
+            const heroListComponent=document.querySelector("hero-list");
+            heroListComponent.set("heroList",[
+              {
+                name:"Iron Man",
+                power:"Intelligence",
+                age:40,
+                darkSide:"alcoholic",
+                url:"https://www.sideshowtoy.com/wp-content/uploads/2018/07/marvel-iron-man-extremis-mark-2-statue-sideshow-feature-2004151.jpg",
+                health:"good"
+              },{
+                name:"Thor",
+                power:"Lightning",
+                age:40,
+                darkSide:"loves war",
+                url:"http://static.t13.cl/images/sizes/1200x675/1491844542-thor.jpg",
+                health:"good"
+              },{
+                name:"Hulk",
+                power:"green giant",
+                age:40,
+                darkSide:"anger management issues",
+                url:"https://i.ytimg.com/vi/1fAs9WPb2sY/hqdefault.jpg",
+                health:"good"
+              },{
+                name:"Wolverine",
+                power:"claws",
+                age:40,
+                darkSide:"deep depression",
+                url:"https://static0.srcdn.com/wordpress/wp-content/uploads/2018/11/Wolverine-Infinity-Gauntlet-Comic.jpg",
+                health:"bad"
+              }
+            ])
+            heroListComponent.addEventListener("show-heroe",event=>{
+                alert("you just killed "+event.detail.name);
+                
+            });
+         </script>
+        
+      </demo-snippet>
+    </div>
+  </body>
+</html>
