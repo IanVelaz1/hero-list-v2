@@ -1,0 +1,121 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../polymer/lib/elements/dom-repeat.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../paper-card/paper-card.html">
+
+
+<dom-module id="hero-list">
+    <template>
+        <style>
+            paper-card {
+                --paper-card-header-image: {
+                    width: 400px;
+                    height: 200px;
+                }
+            }
+
+            .good {
+                --paper-card-background-color: green;
+
+            }
+
+            .bad {
+                --paper-card-background-color: red;
+            }
+
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+
+            .card {
+                display: block;
+                margin: 1rem .25em;
+                width: 15rem;
+                min-width: 30%;
+                max-width: 100%;
+            }
+
+
+        </style>
+        <div class="container">
+<<<<<<< HEAD
+            <dom-repeat items="[[list]]" as="hero">
+                <template>
+                    <paper-card image="[[hero.imageUrl]]" class$="card">
+                        <div class="card-content">
+                            <h3>[[hero.name]]</h3>
+                            <h5>[[hero.mail]]</h5>
+                            <h5>[[hero.phone]]</h5>
+                            <paper-button on-tap="_displayInfo">More Info</paper-button>
+=======
+            <dom-repeat items="[[heroList]]" as="hero">
+                <template>
+                    <paper-card image="[[hero.url]]" class$="card [[hero.health]]">
+                        <div class="card-content">
+                            <h3>[[hero.name]]</h3>
+                            <paper-button on-tap="_displayInfo">Kill him</paper-button>
+>>>>>>> 4071fd1a3d0b9410d084756d7286115dded86db5
+                        </div>
+                    </paper-card>
+                </template>
+            </dom-repeat>
+        </div>
+
+
+    </template>
+
+    <script>
+        /**
+         * `hero-list`
+         * list of marvel heroes
+         *
+         * @customElement
+         * @polymer
+         * @demo demo/index.html
+         */
+        class HeroList extends Polymer.Element {
+            static get is() {
+                return 'hero-list';
+            }
+
+            static get properties() {
+                return {
+<<<<<<< HEAD
+                    list: {
+=======
+                    heroList: {
+>>>>>>> 4071fd1a3d0b9410d084756d7286115dded86db5
+                        type: Array,
+                        value: []
+                    }
+                };
+            }
+
+
+            _displayInfo(event) {
+                // heroList[index].property
+<<<<<<< HEAD
+                this.set(['list', event.model.index, 'health'], 'bad');
+                this.dispatchEvent(new CustomEvent("show-heroe", {
+                    bubbles: false,//////sigue propagacion hacia arriba si esta en true
+=======
+                this.set(['heroList', event.model.index, 'health'], 'bad');
+                this.dispatchEvent(new CustomEvent("show-heroe", {
+                    bubbles: false,//////sigue propagacion hacia arriba
+>>>>>>> 4071fd1a3d0b9410d084756d7286115dded86db5
+                    composed: false,
+                    detail: event.model.hero
+                }))
+            }
+<<<<<<< HEAD
+
+           
+=======
+>>>>>>> 4071fd1a3d0b9410d084756d7286115dded86db5
+        }
+
+        window.customElements.define(HeroList.is, HeroList);
+    </script>
+</dom-module>
